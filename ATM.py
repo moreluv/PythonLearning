@@ -15,7 +15,12 @@ while attempts > 0 and True:
             print("3. Снять деньги")
             print("4. Выход")
 
-            choice = int(input())
+            user_input = input()
+            if not user_input.isdigit():  # Проверка: введено ли число? [8, 9]
+                print("Ошибка: введите цифру от 1 до 4.")
+                continue
+
+            choice = int(user_input)
             if choice == 1:
                 print(balance)
             elif choice == 2:
@@ -32,4 +37,6 @@ while attempts > 0 and True:
             elif choice == 4:
                 print("До свидания!")
                 break
+            else:
+                print("Ошибка, введите число из предложенных")
         break
